@@ -1,0 +1,155 @@
+table {
+    background-color: transparent;
+    font-family: segoe ui, Arial, sans-serif;
+    font-size: 11px;
+    margin: 0 0 5em 0;
+    outline-style: none;
+    table-layout: fixed;
+    width: 100%;
+}
+
+/*Row Styling*/
+tr {
+    background-color: #f5f3e5; /* url(/budget/_images/south-street/ui-bg_highlight-hard_100_f5f3e5_1x100.png) 50% top repeat-x; */
+    color: #312e25;
+}
+tr:nth-child(2n) {
+    background-color: #F5FAFF;
+}
+
+.grid .header td,
+.grid .header th,
+.grid .header {
+    background: rgb(69, 158, 0);
+    border-top: 0px none;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    height: 22px;
+    padding: 0 2px;
+    text-align: center;
+}
+.grid .child-link:hover {
+    cursor: pointer;
+    outline: 1px solid #FFF;
+    text-shadow:
+            1px 1px 0 #327E04,
+            1px -1px 0 #327E04,
+            -1px 1px 0 #327E04,
+            -1px -1px 0 #327E04;
+}
+.grid tr:hover:nth-child(1n) td {
+    background: rgba(242, 252, 156, .5);
+}
+tr.highlight {
+    background-color: #ffff00 !important;
+}
+
+/*Cell Styling*/
+th {
+    border: 1px solid #327E04;
+}
+td {
+    border: 1px solid #dfd9c3;
+    height: 22px;
+    padding: 1px 2px;
+}
+
+.grid .header td{
+    border: 1px solid #327E04;
+}
+
+
+
+/*Customizations*/
+tbody {
+    text-align: right;
+}
+td.col_month {
+    text-align: left;
+}
+th.col_month,
+td.col_month {
+    width: 140px
+}
+.col_salesDays {
+    text-align: center;
+    width: 60px;
+}
+.row_p4p .diff,
+.row_p4p:nth-child(2n) .diff,
+.row_blank .diff,
+.row_blank:nth-child(2n) .diff {
+    background-color: initial;
+}
+.row_p4p .ros {
+    background-color: #fe8;
+}
+.row_p4p:nth-child(2n) .ros {
+    background-color: #ffb;
+}
+.row_p4p .sales {
+    background-color: #aff;
+}
+.row_p4p:nth-child(2n) .sales {
+    background-color: #dff;
+}
+tr .diff,
+div#current .row_p4p .col_revenue,
+div#future .row_p4p .col_f_revenue
+{
+    background-color: #deb;
+}
+tr:nth-child(2n) .diff,
+div#current .row_p4p:nth-child(2n) .col_revenue,
+div#future .row_p4p:nth-child(2n) .col_f_revenue
+{
+    background-color: #efd;
+}
+
+.grid .hit,
+.grid .miss,
+.row_title td {
+    font-weight: bold;
+}
+.row_title td {
+    color: #fff;
+    text-align: center;
+}
+.grid .hit {
+    color: #00f;
+}
+.grid .row_p4p .hit:before {
+    content: '+';
+}
+.grid .miss {
+    color: #f00;
+}
+.grid .blue:nth-child(1n),
+.grid .blue td,
+.grid .blue:hover td,
+.grid tr:hover .blue {
+    background-color: #bef !important;
+}
+.grid .yellow:nth-child(1n),
+.grid .yellow td,
+.grid .yellow:hover td,
+.grid tr:hover .yellow {
+    background-color: #ffeb3b !important;
+}
+.grid .green:nth-child(1n),
+.grid .green td,
+.grid .green:hover td,
+.grid tr:hover .green {
+    background: rgb(69, 158, 0) !important;
+}
+
+.hidetext {
+    /*color:transparent !important;*/
+    font-size:0pt;
+}
+
+@media (max-width: 768px) {
+    table {
+        table-layout: auto;
+    }
+}

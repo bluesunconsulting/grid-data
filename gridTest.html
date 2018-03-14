@@ -1,0 +1,990 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <!--<link rel="icon" type="image/png" href="_images/favicon.ico"/>-->
+    <title>Planning - Projections</title>
+
+<!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" media="screen" href="css/base.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/grid.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/projections.css">
+
+<!-- Bootstrap Files -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<!-- Jquery -->
+    <script type="text/javascript" src="scripts/jquery-3.3.1.min.js"></script>
+
+<!-- Font Awesome -->
+    <script src="https://use.fontawesome.com/8bb2607151.js"></script>
+
+<!-- JS Cookie -->
+    <script type="text/javascript" src="scripts/js-cookie.js"></script>
+
+<!-- custom JS -->
+    <script type="text/javascript" src="scripts/griddata.js"></script>
+
+    <script type="text/javascript" src="scripts/projections.js"></script>
+
+
+</head>
+
+<body>
+
+
+<div id="ewing">
+
+    <div id="wrapper">
+
+
+        <!-- Navigation -->
+
+
+        <div class="row">
+            <div class="col-lg-1">
+            </div>
+            <div class="col-lg-10">
+                <div id="current">
+                    <h3>Sales Projections Example for a Region with 8 Stores</h3>
+                    <h5>Use the <i class="fa fa-angle-double-left"></i> to toggle the slideout that will access the display options panel</h5>
+
+                    <div class="table-container" id="datagrid-containter">
+                        <table id="datagrid" class="grid">
+                            <colgroup>
+                                <col class="x-collapse">
+                                <col class="month">
+                                <col class="salesDays">
+                                <col class="f_revenue">
+                                <col class="diff">
+                                <col class="revenue">
+                                <col class="6  ent_6 lvl_BRANCH">
+                                <col class="14  ent_14 lvl_BRANCH">
+                                <col class="16  ent_16 lvl_BRANCH">
+                                <col class="33  ent_33 lvl_BRANCH">
+                                <col class="43  ent_43 lvl_BRANCH">
+                                <col class="53  ent_53 lvl_BRANCH">
+                                <col class="116  ent_116 lvl_BRANCH">
+                                <col class="191  ent_191 lvl_BRANCH">
+                            </colgroup>
+                            <thead>
+                            <tr>
+                                <th class="header " colspan="3"></th>
+                                <th class="header " colspan="1">Projections</th>
+                                <th class="header " colspan="1">Difference</th>
+                                <th class="header " colspan="9">TTM Actuals</th>
+                            </tr>
+                            <tr>
+                                <th class="header A x-collapse col_x-collapse"></th>
+                                <th class="header B month col_month">Monthly Sales</th>
+                                <th class="header C salesDays col_salesDays">Sales Days</th>
+                                <th class="header D f_revenue col_f_revenue">Projected Sales</th>
+                                <th class="header E col_diff">Projected / TTM Difference</th>
+                                <th class="header F revenue col_revenue">TTM Sales</th>
+                                <th class="header G 6 col_6  ent_6 lvl_BRANCH">6</th>
+                                <th class="header H 14 col_14  ent_14 lvl_BRANCH">14</th>
+                                <th class="header I 16 col_16  ent_16 lvl_BRANCH">16</th>
+                                <th class="header J 33 col_33  ent_33 lvl_BRANCH">33</th>
+                                <th class="header K 43 col_43  ent_43 lvl_BRANCH">43</th>
+                                <th class="header L 53 col_53  ent_53 lvl_BRANCH">53</th>
+                                <th class="header M 116 col_116  ent_116 lvl_BRANCH">116</th>
+                                <th class="header N 191 col_191  ent_191 lvl_BRANCH">191</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr data-row="1" class="_1 row_month">
+                                <td id="A-1" class="col_x_collapse A _1">&nbsp;</td>
+                                <td id="B-1" class="col_month B _1">Jan-17</td>
+                                <td id="C-1" class="col_salesDays C _1">20 | 19</td>
+                                <td id="D-1" class="col_f_revenue D _1">$908,000</td>
+                                <td id="E-1" class="col_diff E _1 current-year miss">$-353,000</td>
+                                <td id="F-1" class="col_revenue F _1">$555,000</td>
+                                <td id="G-1" class="col_6 G _1 ">$128,000</td>
+                                <td id="H-1" class="col_14 H _1 ">$90,000</td>
+                                <td id="I-1" class="col_16 I _1 ">$88,000</td>
+                                <td id="J-1" class="col_33 J _1 ">$50,000</td>
+                                <td id="K-1" class="col_43 K _1 ">$66,000</td>
+                                <td id="L-1" class="col_53 L _1 ">$16,000</td>
+                                <td id="M-1" class="col_116 M _1 ">$87,000</td>
+                                <td id="N-1" class="col_191 N _1 ">$30,000</td>
+                            </tr>
+                            <tr data-row="2" class="_2 row_month">
+                                <td id="A-2" class="col_x_collapse A _2">&nbsp;</td>
+                                <td id="B-2" class="col_month B _2">Feb-17</td>
+                                <td id="C-2" class="col_salesDays C _2">20 | 22</td>
+                                <td id="D-2" class="col_f_revenue D _2">$1,116,000</td>
+                                <td id="E-2" class="col_diff E _2 current-year miss">$-192,000</td>
+                                <td id="F-2" class="col_revenue F _2">$924,000</td>
+                                <td id="G-2" class="col_6 G _2 ">$236,000</td>
+                                <td id="H-2" class="col_14 H _2 ">$158,000</td>
+                                <td id="I-2" class="col_16 I _2 ">$76,000</td>
+                                <td id="J-2" class="col_33 J _2 ">$78,000</td>
+                                <td id="K-2" class="col_43 K _2 ">$147,000</td>
+                                <td id="L-2" class="col_53 L _2 ">$41,000</td>
+                                <td id="M-2" class="col_116 M _2 ">$131,000</td>
+                                <td id="N-2" class="col_191 N _2 ">$56,000</td>
+                            </tr>
+                            <tr data-row="3" class="_3 row_month">
+                                <td id="A-3" class="col_x_collapse A _3">&nbsp;</td>
+                                <td id="B-3" class="col_month B _3">Mar-17</td>
+                                <td id="C-3" class="col_salesDays C _3">23 | 23</td>
+                                <td id="D-3" class="col_f_revenue D _3">$1,466,000</td>
+                                <td id="E-3" class="col_diff E _3 current-year miss">$-6,000</td>
+                                <td id="F-3" class="col_revenue F _3">$1,460,000</td>
+                                <td id="G-3" class="col_6 G _3 ">$355,000</td>
+                                <td id="H-3" class="col_14 H _3 ">$259,000</td>
+                                <td id="I-3" class="col_16 I _3 ">$132,000</td>
+                                <td id="J-3" class="col_33 J _3 ">$120,000</td>
+                                <td id="K-3" class="col_43 K _3 ">$257,000</td>
+                                <td id="L-3" class="col_53 L _3 ">$107,000</td>
+                                <td id="M-3" class="col_116 M _3 ">$135,000</td>
+                                <td id="N-3" class="col_191 N _3 ">$95,000</td>
+                            </tr>
+                            <tr data-row="4" class="_4 row_month">
+                                <td id="A-4" class="col_x_collapse A _4">&nbsp;</td>
+                                <td id="B-4" class="col_month B _4">Apr-17</td>
+                                <td id="C-4" class="col_salesDays C _4">22 | 20</td>
+                                <td id="D-4" class="col_f_revenue D _4">$1,506,000</td>
+                                <td id="E-4" class="col_diff E _4 current-year miss">$-198,000</td>
+                                <td id="F-4" class="col_revenue F _4">$1,308,000</td>
+                                <td id="G-4" class="col_6 G _4 ">$280,000</td>
+                                <td id="H-4" class="col_14 H _4 ">$248,000</td>
+                                <td id="I-4" class="col_16 I _4 ">$110,000</td>
+                                <td id="J-4" class="col_33 J _4 ">$85,000</td>
+                                <td id="K-4" class="col_43 K _4 ">$196,000</td>
+                                <td id="L-4" class="col_53 L _4 ">$96,000</td>
+                                <td id="M-4" class="col_116 M _4 ">$158,000</td>
+                                <td id="N-4" class="col_191 N _4 ">$135,000</td>
+                            </tr>
+                            <tr data-row="5" class="_5 row_month">
+                                <td id="A-5" class="col_x_collapse A _5">&nbsp;</td>
+                                <td id="B-5" class="col_month B _5">May-17</td>
+                                <td id="C-5" class="col_salesDays C _5">20 | 22</td>
+                                <td id="D-5" class="col_f_revenue D _5">$1,400,000</td>
+                                <td id="E-5" class="col_diff E _5 current-year hit">$174,000</td>
+                                <td id="F-5" class="col_revenue F _5">$1,574,000</td>
+                                <td id="G-5" class="col_6 G _5 ">$365,000</td>
+                                <td id="H-5" class="col_14 H _5 ">$283,000</td>
+                                <td id="I-5" class="col_16 I _5 ">$131,000</td>
+                                <td id="J-5" class="col_33 J _5 ">$116,000</td>
+                                <td id="K-5" class="col_43 K _5 ">$283,000</td>
+                                <td id="L-5" class="col_53 L _5 ">$101,000</td>
+                                <td id="M-5" class="col_116 M _5 ">$142,000</td>
+                                <td id="N-5" class="col_191 N _5 ">$154,000</td>
+                            </tr>
+                            <tr data-row="6" class="_6 row_month">
+                                <td id="A-6" class="col_x_collapse A _6">&nbsp;</td>
+                                <td id="B-6" class="col_month B _6">Jun-17</td>
+                                <td id="C-6" class="col_salesDays C _6">19 | 22</td>
+                                <td id="D-6" class="col_f_revenue D _6">$1,452,000</td>
+                                <td id="E-6" class="col_diff E _6 current-year hit">$63,000</td>
+                                <td id="F-6" class="col_revenue F _6">$1,515,000</td>
+                                <td id="G-6" class="col_6 G _6 ">$342,000</td>
+                                <td id="H-6" class="col_14 H _6 ">$340,000</td>
+                                <td id="I-6" class="col_16 I _6 ">$105,000</td>
+                                <td id="J-6" class="col_33 J _6 ">$102,000</td>
+                                <td id="K-6" class="col_43 K _6 ">$265,000</td>
+                                <td id="L-6" class="col_53 L _6 ">$87,000</td>
+                                <td id="M-6" class="col_116 M _6 ">$123,000</td>
+                                <td id="N-6" class="col_191 N _6 ">$150,000</td>
+                            </tr>
+                            <tr data-row="7" class="_7 row_month">
+                                <td id="A-7" class="col_x_collapse A _7">&nbsp;</td>
+                                <td id="B-7" class="col_month B _7">Jul-17</td>
+                                <td id="C-7" class="col_salesDays C _7">24 | 20</td>
+                                <td id="D-7" class="col_f_revenue D _7">$1,691,000</td>
+                                <td id="E-7" class="col_diff E _7 current-year miss">$-24,000</td>
+                                <td id="F-7" class="col_revenue F _7">$1,667,000</td>
+                                <td id="G-7" class="col_6 G _7 ">$395,000</td>
+                                <td id="H-7" class="col_14 H _7 ">$307,000</td>
+                                <td id="I-7" class="col_16 I _7 ">$109,000</td>
+                                <td id="J-7" class="col_33 J _7 ">$123,000</td>
+                                <td id="K-7" class="col_43 K _7 ">$285,000</td>
+                                <td id="L-7" class="col_53 L _7 ">$119,000</td>
+                                <td id="M-7" class="col_116 M _7 ">$128,000</td>
+                                <td id="N-7" class="col_191 N _7 ">$201,000</td>
+                            </tr>
+                            <tr data-row="8" class="_8 row_month">
+                                <td id="A-8" class="col_x_collapse A _8">&nbsp;</td>
+                                <td id="B-8" class="col_month B _8">Aug-17</td>
+                                <td id="C-8" class="col_salesDays C _8">23 | 23</td>
+                                <td id="D-8" class="col_f_revenue D _8">$1,208,000</td>
+                                <td id="E-8" class="col_diff E _8 current-year hit">$132,000</td>
+                                <td id="F-8" class="col_revenue F _8">$1,340,000</td>
+                                <td id="G-8" class="col_6 G _8 ">$323,000</td>
+                                <td id="H-8" class="col_14 H _8 ">$253,000</td>
+                                <td id="I-8" class="col_16 I _8 ">$94,000</td>
+                                <td id="J-8" class="col_33 J _8 ">$86,000</td>
+                                <td id="K-8" class="col_43 K _8 ">$227,000</td>
+                                <td id="L-8" class="col_53 L _8 ">$97,000</td>
+                                <td id="M-8" class="col_116 M _8 ">$124,000</td>
+                                <td id="N-8" class="col_191 N _8 ">$135,000</td>
+                            </tr>
+                            <tr data-row="9" class="_9 row_month">
+                                <td id="A-9" class="col_x_collapse A _9">&nbsp;</td>
+                                <td id="B-9" class="col_month B _9">Sep-17</td>
+                                <td id="C-9" class="col_salesDays C _9">21 | 20</td>
+                                <td id="D-9" class="col_f_revenue D _9">$1,463,000</td>
+                                <td id="E-9" class="col_diff E _9 current-year hit">$126,000</td>
+                                <td id="F-9" class="col_revenue F _9">$1,589,000</td>
+                                <td id="G-9" class="col_6 G _9 ">$414,000</td>
+                                <td id="H-9" class="col_14 H _9 ">$218,000</td>
+                                <td id="I-9" class="col_16 I _9 ">$250,000</td>
+                                <td id="J-9" class="col_33 J _9 ">$78,000</td>
+                                <td id="K-9" class="col_43 K _9 ">$240,000</td>
+                                <td id="L-9" class="col_53 L _9 ">$61,000</td>
+                                <td id="M-9" class="col_116 M _9 ">$220,000</td>
+                                <td id="N-9" class="col_191 N _9 ">$108,000</td>
+                            </tr>
+                            <tr data-row="10" class="_10 row_month">
+                                <td id="A-10" class="col_x_collapse A _10">&nbsp;</td>
+                                <td id="B-10" class="col_month B _10">Oct-17</td>
+                                <td id="C-10" class="col_salesDays C _10">20 | 22</td>
+                                <td id="D-10" class="col_f_revenue D _10">$1,971,000</td>
+                                <td id="E-10" class="col_diff E _10 current-year miss">$-141,000</td>
+                                <td id="F-10" class="col_revenue F _10">$1,830,000</td>
+                                <td id="G-10" class="col_6 G _10 ">$405,000</td>
+                                <td id="H-10" class="col_14 H _10 ">$289,000</td>
+                                <td id="I-10" class="col_16 I _10 ">$193,000</td>
+                                <td id="J-10" class="col_33 J _10 ">$84,000</td>
+                                <td id="K-10" class="col_43 K _10 ">$272,000</td>
+                                <td id="L-10" class="col_53 L _10 ">$93,000</td>
+                                <td id="M-10" class="col_116 M _10 ">$350,000</td>
+                                <td id="N-10" class="col_191 N _10 ">$144,000</td>
+                            </tr>
+                            <tr data-row="11" class="_11 row_month">
+                                <td id="A-11" class="col_x_collapse A _11">&nbsp;</td>
+                                <td id="B-11" class="col_month B _11">Nov-17</td>
+                                <td id="C-11" class="col_salesDays C _11">21 | 20</td>
+                                <td id="D-11" class="col_f_revenue D _11">$1,039,000</td>
+                                <td id="E-11" class="col_diff E _11 current-year hit">$79,000</td>
+                                <td id="F-11" class="col_revenue F _11">$1,118,000</td>
+                                <td id="G-11" class="col_6 G _11 ">$264,000</td>
+                                <td id="H-11" class="col_14 H _11 ">$186,000</td>
+                                <td id="I-11" class="col_16 I _11 ">$100,000</td>
+                                <td id="J-11" class="col_33 J _11 ">$54,000</td>
+                                <td id="K-11" class="col_43 K _11 ">$203,000</td>
+                                <td id="L-11" class="col_53 L _11 ">$77,000</td>
+                                <td id="M-11" class="col_116 M _11 ">$152,000</td>
+                                <td id="N-11" class="col_191 N _11 ">$82,000</td>
+                            </tr>
+                            <tr data-row="12" class="_12 row_month">
+                                <td id="A-12" class="col_x_collapse A _12">&nbsp;</td>
+                                <td id="B-12" class="col_month B _12">Dec-17</td>
+                                <td id="C-12" class="col_salesDays C _12">21 | 20</td>
+                                <td id="D-12" class="col_f_revenue D _12">$780,000</td>
+                                <td id="E-12" class="col_diff E _12 current-year hit">$15,000</td>
+                                <td id="F-12" class="col_revenue F _12">$795,000</td>
+                                <td id="G-12" class="col_6 G _12 ">$163,000</td>
+                                <td id="H-12" class="col_14 H _12 ">$169,000</td>
+                                <td id="I-12" class="col_16 I _12 ">$64,000</td>
+                                <td id="J-12" class="col_33 J _12 ">$62,000</td>
+                                <td id="K-12" class="col_43 K _12 ">$153,000</td>
+                                <td id="L-12" class="col_53 L _12 ">$51,000</td>
+                                <td id="M-12" class="col_116 M _12 ">$79,000</td>
+                                <td id="N-12" class="col_191 N _12 ">$54,000</td>
+                            </tr>
+                            <tr data-row="13" class="_13 row_total_months yellow">
+                                <td id="A-13" class="col_x_collapse A _13">&nbsp;</td>
+                                <td id="B-13" class="col_month B _13">TOTALS</td>
+                                <td id="C-13" class="col_salesDays C _13"></td>
+                                <td id="D-13" class="col_f_revenue D _13">$16,000,000</td>
+                                <td id="E-13" class="col_diff E _13 grand-total">$-325,000</td>
+                                <td id="F-13" class="col_revenue F _13">$15,675,000</td>
+                                <td id="G-13" class="col_6 G _13 ">$3,670,000</td>
+                                <td id="H-13" class="col_14 H _13 ">$2,801,000</td>
+                                <td id="I-13" class="col_16 I _13 ">$1,451,000</td>
+                                <td id="J-13" class="col_33 J _13 ">$1,038,000</td>
+                                <td id="K-13" class="col_43 K _13 ">$2,594,000</td>
+                                <td id="L-13" class="col_53 L _13 ">$946,000</td>
+                                <td id="M-13" class="col_116 M _13 ">$1,830,000</td>
+                                <td id="N-13" class="col_191 N _13 ">$1,344,000</td>
+                            </tr>
+                            <tr data-row="14" class="_14 row_key">
+                                <td id="A-14" class="col_x_collapse A _14">&nbsp;</td>
+                                <td id="B-14" class="col_month B _14">AM Key Accounts</td>
+                                <td id="C-14" class="col_salesDays C _14"></td>
+                                <td id="D-14" class="col_f_revenue D _14">$9,656,000</td>
+                                <td id="E-14" class="col_diff E _14">$9,653,000</td>
+                                <td id="F-14" class="col_revenue F _14">$3,000</td>
+                                <td id="G-14" class="col_6 G _14 "></td>
+                                <td id="H-14" class="col_14 H _14 "></td>
+                                <td id="I-14" class="col_16 I _14 "></td>
+                                <td id="J-14" class="col_33 J _14 "></td>
+                                <td id="K-14" class="col_43 K _14 "></td>
+                                <td id="L-14" class="col_53 L _14 "></td>
+                                <td id="M-14" class="col_116 M _14 "></td>
+                                <td id="N-14" class="col_191 N _14 "></td>
+                            </tr>
+                            <tr data-row="15" class="_15 row_other">
+                                <td id="A-15" class="col_x_collapse A _15">&nbsp;</td>
+                                <td id="B-15" class="col_month B _15">Other Accounts</td>
+                                <td id="C-15" class="col_salesDays C _15"></td>
+                                <td id="D-15" class="col_f_revenue D _15">$6,344,000</td>
+                                <td id="E-15" class="col_diff E _15">$9,328,000</td>
+                                <td id="F-15" class="col_revenue F _15">$15,671,000</td>
+                                <td id="G-15" class="col_6 G _15 "></td>
+                                <td id="H-15" class="col_14 H _15 "></td>
+                                <td id="I-15" class="col_16 I _15 "></td>
+                                <td id="J-15" class="col_33 J _15 "></td>
+                                <td id="K-15" class="col_43 K _15 "></td>
+                                <td id="L-15" class="col_53 L _15 "></td>
+                                <td id="M-15" class="col_116 M _15 "></td>
+                                <td id="N-15" class="col_191 N _15 "></td>
+                            </tr>
+                            <tr data-row="16" class="_16 row_bmkey">
+                                <td id="A-16" class="col_x_collapse A _16">&nbsp;</td>
+                                <td id="B-16" class="col_month B _16">BM Key Accounts</td>
+                                <td id="C-16" class="col_salesDays C _16"></td>
+                                <td id="D-16" class="col_f_revenue D _16">$0</td>
+                                <td id="E-16" class="col_diff E _16">$0</td>
+                                <td id="F-16" class="col_revenue F _16">$0</td>
+                                <td id="G-16" class="col_6 G _16 "></td>
+                                <td id="H-16" class="col_14 H _16 "></td>
+                                <td id="I-16" class="col_16 I _16 "></td>
+                                <td id="J-16" class="col_33 J _16 "></td>
+                                <td id="K-16" class="col_43 K _16 "></td>
+                                <td id="L-16" class="col_53 L _16 "></td>
+                                <td id="M-16" class="col_116 M _16 "></td>
+                                <td id="N-16" class="col_191 N _16 "></td>
+                            </tr>
+                            <tr data-row="17" class="_17 row_blank">
+                                <td id="A-17" class="col_x_collapse A _17">&nbsp;</td>
+                                <td id="B-17" class="col_month B _17"></td>
+                                <td id="C-17" class="col_salesDays C _17"></td>
+                                <td id="D-17" class="col_f_revenue D _17"></td>
+                                <td id="E-17" class="col_diff E _17"></td>
+                                <td id="F-17" class="col_revenue F _17"></td>
+                                <td id="G-17" class="col_6 G _17 "></td>
+                                <td id="H-17" class="col_14 H _17 "></td>
+                                <td id="I-17" class="col_16 I _17 "></td>
+                                <td id="J-17" class="col_33 J _17 "></td>
+                                <td id="K-17" class="col_43 K _17 "></td>
+                                <td id="L-17" class="col_53 L _17 "></td>
+                                <td id="M-17" class="col_116 M _17 "></td>
+                                <td id="N-17" class="col_191 N _17 "></td>
+                            </tr>
+                            <tr data-row="18" class="_18 row_title x-expenses">
+                                <td id="A-18" class="col_x_collapse A _18 green">&nbsp;</td>
+                                <td id="B-18" class="col_month B _18 green">Expenses</td>
+                                <td id="C-18" class="col_salesDays C _18 green"></td>
+                                <td id="D-18" class="col_f_revenue D _18 green">Projected Expenses</td>
+                                <td id="E-18" class="col_diff E _18 green">Projected / TTM Difference</td>
+                                <td id="F-18" class="col_revenue F _18 green">TTM Expenses</td>
+                                <td id="G-18" class="col_6 G _18 green  ent_6 lvl_BRANCH">6</td>
+                                <td id="H-18" class="col_14 H _18 green  ent_14 lvl_BRANCH">14</td>
+                                <td id="I-18" class="col_16 I _18 green  ent_16 lvl_BRANCH">16</td>
+                                <td id="J-18" class="col_33 J _18 green  ent_33 lvl_BRANCH">33</td>
+                                <td id="K-18" class="col_43 K _18 green  ent_43 lvl_BRANCH">43</td>
+                                <td id="L-18" class="col_53 L _18 green  ent_53 lvl_BRANCH">53</td>
+                                <td id="M-18" class="col_116 M _18 green  ent_116 lvl_BRANCH">116
+                                </td>
+                                <td id="N-18" class="col_191 N _18 green  ent_191 lvl_BRANCH">191
+                                </td>
+                            </tr>
+                            <tr data-row="19" class="_19 row_total row_revenue">
+                                <td id="A-19" class="col_x_collapse A _19">&nbsp;</td>
+                                <td id="B-19" class="col_month B _19">Sales</td>
+                                <td id="C-19" class="col_salesDays C _19"></td>
+                                <td id="D-19" class="col_f_revenue D _19">$16,000,000</td>
+                                <td id="E-19" class="col_diff E _19">$-325,000</td>
+                                <td id="F-19" class="col_revenue F _19">$15,675,000</td>
+                                <td id="G-19" class="col_6 G _19 ">$3,670,000</td>
+                                <td id="H-19" class="col_14 H _19 ">$2,801,000</td>
+                                <td id="I-19" class="col_16 I _19 ">$1,451,000</td>
+                                <td id="J-19" class="col_33 J _19 ">$1,038,000</td>
+                                <td id="K-19" class="col_43 K _19 ">$2,594,000</td>
+                                <td id="L-19" class="col_53 L _19 ">$946,000</td>
+                                <td id="M-19" class="col_116 M _19 ">$1,830,000</td>
+                                <td id="N-19" class="col_191 N _19 ">$1,344,000</td>
+                            </tr>
+                            <tr data-row="20" class="_20 row_cogs">
+                                <td id="A-20" class="col_x_collapse A _20">&nbsp;</td>
+                                <td id="B-20" class="col_month B _20">COGS</td>
+                                <td id="C-20" class="col_salesDays C _20"></td>
+                                <td id="D-20" class="col_f_revenue D _20">65.83%</td>
+                                <td id="E-20" class="col_diff E _20">2.84%</td>
+                                <td id="F-20" class="col_revenue F _20">68.67%</td>
+                                <td id="G-20" class="col_6 G _20 ">67.83%</td>
+                                <td id="H-20" class="col_14 H _20 ">67.25%</td>
+                                <td id="I-20" class="col_16 I _20 ">71.41%</td>
+                                <td id="J-20" class="col_33 J _20 ">68.24%</td>
+                                <td id="K-20" class="col_43 K _20 ">67.58%</td>
+                                <td id="L-20" class="col_53 L _20 ">66.56%</td>
+                                <td id="M-20" class="col_116 M _20 ">72.49%</td>
+                                <td id="N-20" class="col_191 N _20 ">69.72%</td>
+                            </tr>
+                            <tr data-row="21" class="_21 row_expense">
+                                <td id="A-21" class="col_x_collapse A _21">&nbsp;</td>
+                                <td id="B-21" class="col_month B _21">Gross Margin</td>
+                                <td id="C-21" class="col_salesDays C _21"></td>
+                                <td id="D-21" class="col_f_revenue D _21">34.17%</td>
+                                <td id="E-21" class="col_diff E _21 miss">-2.84%</td>
+                                <td id="F-21" class="col_revenue F _21">31.33%</td>
+                                <td id="G-21" class="col_6 G _21  hit">32.17%</td>
+                                <td id="H-21" class="col_14 H _21  hit">32.75%</td>
+                                <td id="I-21" class="col_16 I _21  hit">28.59%</td>
+                                <td id="J-21" class="col_33 J _21  hit">31.76%</td>
+                                <td id="K-21" class="col_43 K _21  hit">32.42%</td>
+                                <td id="L-21" class="col_53 L _21  hit">33.44%</td>
+                                <td id="M-21" class="col_116 M _21  hit">27.51%</td>
+                                <td id="N-21" class="col_191 N _21  hit">30.28%</td>
+                            </tr>
+                            <tr data-row="22" class="_22 row_expense">
+                                <td id="A-22" class="col_x_collapse A _22">&nbsp;</td>
+                                <td id="B-22" class="col_month B _22">Payroll</td>
+                                <td id="C-22" class="col_salesDays C _22"></td>
+                                <td id="D-22" class="col_f_revenue D _22">7.50%</td>
+                                <td id="E-22" class="col_diff E _22 hit">-0.29%</td>
+                                <td id="F-22" class="col_revenue F _22">7.21%</td>
+                                <td id="G-22" class="col_6 G _22  miss">6.67%</td>
+                                <td id="H-22" class="col_14 H _22  hit">5.65%</td>
+                                <td id="I-22" class="col_16 I _22  miss">7.34%</td>
+                                <td id="J-22" class="col_33 J _22  miss">10.50%</td>
+                                <td id="K-22" class="col_43 K _22  miss">6.56%</td>
+                                <td id="L-22" class="col_53 L _22  miss">10.93%</td>
+                                <td id="M-22" class="col_116 M _22  hit">5.68%</td>
+                                <td id="N-22" class="col_191 N _22  hit">10.01%</td>
+                            </tr>
+                            <tr data-row="23" class="_23 row_expense">
+                                <td id="A-23" class="col_x_collapse A _23">&nbsp;</td>
+                                <td id="B-23" class="col_month B _23">Direct Expenses</td>
+                                <td id="C-23" class="col_salesDays C _23"></td>
+                                <td id="D-23" class="col_f_revenue D _23">14.94%</td>
+                                <td id="E-23" class="col_diff E _23 hit">-2.02%</td>
+                                <td id="F-23" class="col_revenue F _23">12.92%</td>
+                                <td id="G-23" class="col_6 G _23  miss">9.65%</td>
+                                <td id="H-23" class="col_14 H _23  hit">10.60%</td>
+                                <td id="I-23" class="col_16 I _23  hit">14.99%</td>
+                                <td id="J-23" class="col_33 J _23  miss">19.91%</td>
+                                <td id="K-23" class="col_43 K _23  hit">10.90%</td>
+                                <td id="L-23" class="col_53 L _23  hit">18.91%</td>
+                                <td id="M-23" class="col_116 M _23  miss">16.53%</td>
+                                <td id="N-23" class="col_191 N _23  hit">13.78%</td>
+                            </tr>
+                            <tr data-row="24" class="_24 row_expense">
+                                <td id="A-24" class="col_x_collapse A _24">&nbsp;</td>
+                                <td id="B-24" class="col_month B _24">Interest Expense</td>
+                                <td id="C-24" class="col_salesDays C _24"></td>
+                                <td id="D-24" class="col_f_revenue D _24">4.28%</td>
+                                <td id="E-24" class="col_diff E _24 hit">-0.36%</td>
+                                <td id="F-24" class="col_revenue F _24">3.92%</td>
+                                <td id="G-24" class="col_6 G _24  miss">3.88%</td>
+                                <td id="H-24" class="col_14 H _24  miss">3.71%</td>
+                                <td id="I-24" class="col_16 I _24  miss">4.09%</td>
+                                <td id="J-24" class="col_33 J _24  miss">4.35%</td>
+                                <td id="K-24" class="col_43 K _24  miss">3.39%</td>
+                                <td id="L-24" class="col_53 L _24  miss">5.70%</td>
+                                <td id="M-24" class="col_116 M _24  miss">3.56%</td>
+                                <td id="N-24" class="col_191 N _24  miss">4.21%</td>
+                            </tr>
+                            <tr data-row="25" class="_25 row_expense">
+                                <td id="A-25" class="col_x_collapse A _25">&nbsp;</td>
+                                <td id="B-25" class="col_month B _25">Sales Salaries</td>
+                                <td id="C-25" class="col_salesDays C _25"></td>
+                                <td id="D-25" class="col_f_revenue D _25">1.07%</td>
+                                <td id="E-25" class="col_diff E _25 miss">0.40%</td>
+                                <td id="F-25" class="col_revenue F _25">1.47%</td>
+                                <td id="G-25" class="col_6 G _25  hit">0.91%</td>
+                                <td id="H-25" class="col_14 H _25  miss">1.19%</td>
+                                <td id="I-25" class="col_16 I _25  miss">2.30%</td>
+                                <td id="J-25" class="col_33 J _25  miss">0.61%</td>
+                                <td id="K-25" class="col_43 K _25  hit">1.28%</td>
+                                <td id="L-25" class="col_53 L _25  miss">3.19%</td>
+                                <td id="M-25" class="col_116 M _25  miss">1.65%</td>
+                                <td id="N-25" class="col_191 N _25  miss">2.24%</td>
+                            </tr>
+                            <tr data-row="26" class="_26 row_expense">
+                                <td id="A-26" class="col_x_collapse A _26">&nbsp;</td>
+                                <td id="B-26" class="col_month B _26">Other Allocated</td>
+                                <td id="C-26" class="col_salesDays C _26"></td>
+                                <td id="D-26" class="col_f_revenue D _26">1.71%</td>
+                                <td id="E-26" class="col_diff E _26 miss">1.16%</td>
+                                <td id="F-26" class="col_revenue F _26">2.87%</td>
+                                <td id="G-26" class="col_6 G _26  miss">1.59%</td>
+                                <td id="H-26" class="col_14 H _26  miss">2.09%</td>
+                                <td id="I-26" class="col_16 I _26  miss">4.03%</td>
+                                <td id="J-26" class="col_33 J _26  miss">5.41%</td>
+                                <td id="K-26" class="col_43 K _26  miss">2.25%</td>
+                                <td id="L-26" class="col_53 L _26  miss">5.99%</td>
+                                <td id="M-26" class="col_116 M _26  miss">3.06%</td>
+                                <td id="N-26" class="col_191 N _26  miss">3.54%</td>
+                            </tr>
+                            <tr data-row="27" class="_27 row_expense">
+                                <td id="A-27" class="col_x_collapse A _27">&nbsp;</td>
+                                <td id="B-27" class="col_month B _27">P4P Profit</td>
+                                <td id="C-27" class="col_salesDays C _27"></td>
+                                <td id="D-27" class="col_f_revenue D _27">4.67%</td>
+                                <td id="E-27" class="col_diff E _27 miss">-1.74%</td>
+                                <td id="F-27" class="col_revenue F _27">2.93%</td>
+                                <td id="G-27" class="col_6 G _27  miss">9.47%</td>
+                                <td id="H-27" class="col_14 H _27  miss">9.50%</td>
+                                <td id="I-27" class="col_16 I _27  hit">-4.15%</td>
+                                <td id="J-27" class="col_33 J _27  miss">-9.03%</td>
+                                <td id="K-27" class="col_43 K _27  miss">8.04%</td>
+                                <td id="L-27" class="col_53 L _27  hit">-11.28%</td>
+                                <td id="M-27" class="col_116 M _27  miss">-2.97%</td>
+                                <td id="N-27" class="col_191 N _27  hit">-3.51%</td>
+                            </tr>
+                            <tr data-row="28" class="_28 row_blank">
+                                <td id="A-28" class="col_x_collapse A _28">&nbsp;</td>
+                                <td id="B-28" class="col_month B _28"></td>
+                                <td id="C-28" class="col_salesDays C _28"></td>
+                                <td id="D-28" class="col_f_revenue D _28"></td>
+                                <td id="E-28" class="col_diff E _28"></td>
+                                <td id="F-28" class="col_revenue F _28"></td>
+                                <td id="G-28" class="col_6 G _28 "></td>
+                                <td id="H-28" class="col_14 H _28 "></td>
+                                <td id="I-28" class="col_16 I _28 "></td>
+                                <td id="J-28" class="col_33 J _28 "></td>
+                                <td id="K-28" class="col_43 K _28 "></td>
+                                <td id="L-28" class="col_53 L _28 "></td>
+                                <td id="M-28" class="col_116 M _28 "></td>
+                                <td id="N-28" class="col_191 N _28 "></td>
+                            </tr>
+                            <tr data-row="29" class="_29 row_title x-p4p">
+                                <td id="A-29" class="col_x_collapse A _29 green">&nbsp;</td>
+                                <td id="B-29" class="col_month B _29 green">Pay 4 Performance</td>
+                                <td id="C-29" class="col_salesDays C _29 green"></td>
+                                <td id="D-29" class="col_f_revenue D _29 green">Projected P4P</td>
+                                <td id="E-29" class="col_diff E _29 green"></td>
+                                <td id="F-29" class="col_revenue F _29 green">TTM P4P</td>
+                                <td id="G-29" class="col_6 G _29 green  ent_6 lvl_BRANCH">6</td>
+                                <td id="H-29" class="col_14 H _29 green  ent_14 lvl_BRANCH">14</td>
+                                <td id="I-29" class="col_16 I _29 green  ent_16 lvl_BRANCH">16</td>
+                                <td id="J-29" class="col_33 J _29 green  ent_33 lvl_BRANCH">33</td>
+                                <td id="K-29" class="col_43 K _29 green  ent_43 lvl_BRANCH">43</td>
+                                <td id="L-29" class="col_53 L _29 green  ent_53 lvl_BRANCH">53</td>
+                                <td id="M-29" class="col_116 M _29 green  ent_116 lvl_BRANCH">116
+                                </td>
+                                <td id="N-29" class="col_191 N _29 green  ent_191 lvl_BRANCH">191
+                                </td>
+                            </tr>
+                            <tr data-row="30" class="_30 row_p4p">
+                                <td id="A-30" class="col_x_collapse A _30 ros">&nbsp;</td>
+                                <td id="B-30" class="col_month B _30 ros">ROS Target</td>
+                                <td id="C-30" class="col_salesDays C _30 ros"></td>
+                                <td id="D-30" class="col_f_revenue D _30 ros">4.06%</td>
+                                <td id="E-30" class="col_diff E _30 ros"></td>
+                                <td id="F-30" class="col_revenue F _30 ros"></td>
+                                <td id="G-30" class="col_6 G _30  ros">11.99%</td>
+                                <td id="H-30" class="col_14 H _30  ros">10.50%</td>
+                                <td id="I-30" class="col_16 I _30  ros">-6.59%</td>
+                                <td id="J-30" class="col_33 J _30  ros">1.85%</td>
+                                <td id="K-30" class="col_43 K _30  ros">9.47%</td>
+                                <td id="L-30" class="col_53 L _30  ros">-11.74%</td>
+                                <td id="M-30" class="col_116 M _30  ros">-2.58%</td>
+                                <td id="N-30" class="col_191 N _30  ros">-5.91%</td>
+                            </tr>
+                            <tr data-row="31" class="_31 row_p4p">
+                                <td id="A-31" class="col_x_collapse A _31 ros">&nbsp;</td>
+                                <td id="B-31" class="col_month B _31 ros">ROS Performance</td>
+                                <td id="C-31" class="col_salesDays C _31 ros"></td>
+                                <td id="D-31" class="col_f_revenue D _31 ros">0.61%</td>
+                                <td id="E-31" class="col_diff E _31 ros"></td>
+                                <td id="F-31" class="col_revenue F _31 ros miss">-1.13%</td>
+                                <td id="G-31" class="col_6 G _31 miss ros">-2.52%</td>
+                                <td id="H-31" class="col_14 H _31 miss ros">-1.00%</td>
+                                <td id="I-31" class="col_16 I _31 hit ros">2.44%</td>
+                                <td id="J-31" class="col_33 J _31 miss ros">-10.88%</td>
+                                <td id="K-31" class="col_43 K _31 miss ros">-1.43%</td>
+                                <td id="L-31" class="col_53 L _31 hit ros">0.46%</td>
+                                <td id="M-31" class="col_116 M _31 miss ros">-0.39%</td>
+                                <td id="N-31" class="col_191 N _31 hit ros">2.40%</td>
+                            </tr>
+                            <tr data-row="32" class="_32 row_p4p">
+                                <td id="A-32" class="col_x_collapse A _32 ros">&nbsp;</td>
+                                <td id="B-32" class="col_month B _32 ros">ROS Payout (% of GM or salary)</td>
+                                <td id="C-32" class="col_salesDays C _32 ros"></td>
+                                <td id="D-32" class="col_f_revenue D _32 ros">15.00%</td>
+                                <td id="E-32" class="col_diff E _32 ros"></td>
+                                <td id="F-32" class="col_revenue F _32 ros">0.00%</td>
+                                <td id="G-32" class="col_6 G _32  ros">0.00%</td>
+                                <td id="H-32" class="col_14 H _32  ros">0.00%</td>
+                                <td id="I-32" class="col_16 I _32  ros">1.20%</td>
+                                <td id="J-32" class="col_33 J _32  ros">0.00%</td>
+                                <td id="K-32" class="col_43 K _32  ros">0.00%</td>
+                                <td id="L-32" class="col_53 L _32  ros">1.05%</td>
+                                <td id="M-32" class="col_116 M _32  ros">0.50%</td>
+                                <td id="N-32" class="col_191 N _32  ros">1.20%</td>
+                            </tr>
+                            <tr data-row="33" class="_33 row_p4p">
+                                <td id="A-33" class="col_x_collapse A _33 sales">&nbsp;</td>
+                                <td id="B-33" class="col_month B _33 sales">Sales Target</td>
+                                <td id="C-33" class="col_salesDays C _33 sales"></td>
+                                <td id="D-33" class="col_f_revenue D _33 sales">$17,033,000</td>
+                                <td id="E-33" class="col_diff E _33 sales"></td>
+                                <td id="F-33" class="col_revenue F _33 sales"></td>
+                                <td id="G-33" class="col_6 G _33  sales">$4,067,000</td>
+                                <td id="H-33" class="col_14 H _33  sales">$2,806,000</td>
+                                <td id="I-33" class="col_16 I _33  sales">$1,586,000</td>
+                                <td id="J-33" class="col_33 J _33  sales">$1,504,000</td>
+                                <td id="K-33" class="col_43 K _33  sales">$2,718,000</td>
+                                <td id="L-33" class="col_53 L _33  sales">$964,000</td>
+                                <td id="M-33" class="col_116 M _33  sales">$2,048,000</td>
+                                <td id="N-33" class="col_191 N _33  sales">$1,340,000</td>
+                            </tr>
+                            <tr data-row="34" class="_34 row_p4p">
+                                <td id="A-34" class="col_x_collapse A _34 sales">&nbsp;</td>
+                                <td id="B-34" class="col_month B _34 sales">Sales Performance</td>
+                                <td id="C-34" class="col_salesDays C _34 sales"></td>
+                                <td id="D-34" class="col_f_revenue D _34 sales">-6.06%</td>
+                                <td id="E-34" class="col_diff E _34 sales"></td>
+                                <td id="F-34" class="col_revenue F _34 sales miss">-7.98%</td>
+                                <td id="G-34" class="col_6 G _34 miss sales">-9.75%</td>
+                                <td id="H-34" class="col_14 H _34 miss sales">-0.19%</td>
+                                <td id="I-34" class="col_16 I _34 miss sales">-8.46%</td>
+                                <td id="J-34" class="col_33 J _34 miss sales">-31.00%</td>
+                                <td id="K-34" class="col_43 K _34 miss sales">-4.56%</td>
+                                <td id="L-34" class="col_53 L _34 miss sales">-1.88%</td>
+                                <td id="M-34" class="col_116 M _34 miss sales">-10.65%</td>
+                                <td id="N-34" class="col_191 N _34 hit sales">0.29%</td>
+                            </tr>
+                            <tr data-row="35" class="_35 row_p4p">
+                                <td id="A-35" class="col_x_collapse A _35 sales">&nbsp;</td>
+                                <td id="B-35" class="col_month B _35 sales">Sales Multiplier</td>
+                                <td id="C-35" class="col_salesDays C _35 sales"></td>
+                                <td id="D-35" class="col_f_revenue D _35 sales">0.75</td>
+                                <td id="E-35" class="col_diff E _35 sales"></td>
+                                <td id="F-35" class="col_revenue F _35 sales">0.75</td>
+                                <td id="G-35" class="col_6 G _35  sales">0.75</td>
+                                <td id="H-35" class="col_14 H _35  sales">0.95</td>
+                                <td id="I-35" class="col_16 I _35  sales">0.75</td>
+                                <td id="J-35" class="col_33 J _35  sales">0.75</td>
+                                <td id="K-35" class="col_43 K _35  sales">0.75</td>
+                                <td id="L-35" class="col_53 L _35  sales">0.9</td>
+                                <td id="M-35" class="col_116 M _35  sales">0.75</td>
+                                <td id="N-35" class="col_191 N _35  sales">1</td>
+                            </tr>
+                            <tr data-row="36" class="_36 row_p4p">
+                                <td id="A-36" class="col_x_collapse A _36 payout">&nbsp;</td>
+                                <td id="B-36" class="col_month B _36 payout">Overall P4P Payout (% of GM or salary)</td>
+                                <td id="C-36" class="col_salesDays C _36 payout"></td>
+                                <td id="D-36" class="col_f_revenue D _36 payout">11.25%</td>
+                                <td id="E-36" class="col_diff E _36 payout"></td>
+                                <td id="F-36" class="col_revenue F _36 payout">0%</td>
+                                <td id="G-36" class="col_6 G _36 ">0%</td>
+                                <td id="H-36" class="col_14 H _36 ">0%</td>
+                                <td id="I-36" class="col_16 I _36 ">0.9%</td>
+                                <td id="J-36" class="col_33 J _36 ">0%</td>
+                                <td id="K-36" class="col_43 K _36 ">0%</td>
+                                <td id="L-36" class="col_53 L _36 ">0.945%</td>
+                                <td id="M-36" class="col_116 M _36 ">0.375%</td>
+                                <td id="N-36" class="col_191 N _36 ">1.2%</td>
+                            </tr>
+                            <tr data-row="37" class="_37 row_p4p">
+                                <td id="A-37" class="col_x_collapse A _37">&nbsp;</td>
+                                <td id="B-37" class="col_month B _37">Branch GM</td>
+                                <td id="C-37" class="col_salesDays C _37"></td>
+                                <td id="D-37" class="col_f_revenue D _37">-----</td>
+                                <td id="E-37" class="col_diff E _37"></td>
+                                <td id="F-37" class="col_revenue F _37">-----</td>
+                                <td id="G-37" class="col_6 G _37 ">$1,181,000</td>
+                                <td id="H-37" class="col_14 H _37 ">$917,000</td>
+                                <td id="I-37" class="col_16 I _37 ">$415,000</td>
+                                <td id="J-37" class="col_33 J _37 ">$330,000</td>
+                                <td id="K-37" class="col_43 K _37 ">$841,000</td>
+                                <td id="L-37" class="col_53 L _37 ">$316,000</td>
+                                <td id="M-37" class="col_116 M _37 ">$503,000</td>
+                                <td id="N-37" class="col_191 N _37 ">$407,000</td>
+                            </tr>
+                            <tr data-row="38" class="_38 row_p4p">
+                                <td id="A-38" class="col_x_collapse A _38">&nbsp;</td>
+                                <td id="B-38" class="col_month B _38">P4P Pool</td>
+                                <td id="C-38" class="col_salesDays C _38"></td>
+                                <td id="D-38" class="col_f_revenue D _38">-----</td>
+                                <td id="E-38" class="col_diff E _38"></td>
+                                <td id="F-38" class="col_revenue F _38">-----</td>
+                                <td id="G-38" class="col_6 G _38 ">$0</td>
+                                <td id="H-38" class="col_14 H _38 ">$0</td>
+                                <td id="I-38" class="col_16 I _38 ">$4,000</td>
+                                <td id="J-38" class="col_33 J _38 ">$0</td>
+                                <td id="K-38" class="col_43 K _38 ">$0</td>
+                                <td id="L-38" class="col_53 L _38 ">$3,000</td>
+                                <td id="M-38" class="col_116 M _38 ">$2,000</td>
+                                <td id="N-38" class="col_191 N _38 ">$5,000</td>
+                            </tr>
+                            <tr data-row="39" class="_39 row_blank">
+                                <td id="A-39" class="col_x_collapse A _39">&nbsp;</td>
+                                <td id="B-39" class="col_month B _39"></td>
+                                <td id="C-39" class="col_salesDays C _39"></td>
+                                <td id="D-39" class="col_f_revenue D _39"></td>
+                                <td id="E-39" class="col_diff E _39"></td>
+                                <td id="F-39" class="col_revenue F _39"></td>
+                                <td id="G-39" class="col_6 G _39 "></td>
+                                <td id="H-39" class="col_14 H _39 "></td>
+                                <td id="I-39" class="col_16 I _39 "></td>
+                                <td id="J-39" class="col_33 J _39 "></td>
+                                <td id="K-39" class="col_43 K _39 "></td>
+                                <td id="L-39" class="col_53 L _39 "></td>
+                                <td id="M-39" class="col_116 M _39 "></td>
+                                <td id="N-39" class="col_191 N _39 "></td>
+                            </tr>
+                            <tr data-row="40" class="_40 row_title x-categories">
+                                <td id="A-40" class="col_x_collapse A _40 green">&nbsp;</td>
+                                <td id="B-40" class="col_month B _40 green">Product Categories</td>
+                                <td id="C-40" class="col_salesDays C _40 green"></td>
+                                <td id="D-40" class="col_f_revenue D _40 green">Projected Sales</td>
+                                <td id="E-40" class="col_diff E _40 green">Projected / TTM Difference</td>
+                                <td id="F-40" class="col_revenue F _40 green">TTM Sales</td>
+                                <td id="G-40" class="col_6 G _40 green  ent_6 lvl_BRANCH">6</td>
+                                <td id="H-40" class="col_14 H _40 green  ent_14 lvl_BRANCH">14</td>
+                                <td id="I-40" class="col_16 I _40 green  ent_16 lvl_BRANCH">16</td>
+                                <td id="J-40" class="col_33 J _40 green  ent_33 lvl_BRANCH">33</td>
+                                <td id="K-40" class="col_43 K _40 green  ent_43 lvl_BRANCH">43</td>
+                                <td id="L-40" class="col_53 L _40 green  ent_53 lvl_BRANCH">53</td>
+                                <td id="M-40" class="col_116 M _40 green  ent_116 lvl_BRANCH">116
+                                </td>
+                                <td id="N-40" class="col_191 N _40 green  ent_191 lvl_BRANCH">191
+                                </td>
+                            </tr>
+                            <tr data-row="41" class="_41 row_category">
+                                <td id="A-41" class="col_x_collapse A _41">&nbsp;</td>
+                                <td id="B-41" class="col_month B _41">Golf</td>
+                                <td id="C-41" class="col_salesDays C _41"></td>
+                                <td id="D-41" class="col_f_revenue D _41">1.26%</td>
+                                <td id="E-41" class="col_diff E _41 miss">-0.99%</td>
+                                <td id="F-41" class="col_revenue F _41">0.27%</td>
+                                <td id="G-41" class="col_6 G _41  miss">0.33%</td>
+                                <td id="H-41" class="col_14 H _41  hit">0.33%</td>
+                                <td id="I-41" class="col_16 I _41  miss">-0.02%</td>
+                                <td id="J-41" class="col_33 J _41  hit">0.25%</td>
+                                <td id="K-41" class="col_43 K _41  hit">0.13%</td>
+                                <td id="L-41" class="col_53 L _41  hit">0.10%</td>
+                                <td id="M-41" class="col_116 M _41  miss">0.00%</td>
+                                <td id="N-41" class="col_191 N _41  hit">1.02%</td>
+                            </tr>
+                            <tr data-row="42" class="_42 row_category">
+                                <td id="A-42" class="col_x_collapse A _42">&nbsp;</td>
+                                <td id="B-42" class="col_month B _42">Grower</td>
+                                <td id="C-42" class="col_salesDays C _42"></td>
+                                <td id="D-42" class="col_f_revenue D _42">0.38%</td>
+                                <td id="E-42" class="col_diff E _42 miss">-0.32%</td>
+                                <td id="F-42" class="col_revenue F _42">0.06%</td>
+                                <td id="G-42" class="col_6 G _42  hit">0.09%</td>
+                                <td id="H-42" class="col_14 H _42  hit">0.11%</td>
+                                <td id="I-42" class="col_16 I _42  miss">0.00%</td>
+                                <td id="J-42" class="col_33 J _42  miss">0.00%</td>
+                                <td id="K-42" class="col_43 K _42  hit">0.01%</td>
+                                <td id="L-42" class="col_53 L _42  miss">0.35%</td>
+                                <td id="M-42" class="col_116 M _42  hit">0.00%</td>
+                                <td id="N-42" class="col_191 N _42  hit">0.02%</td>
+                            </tr>
+                            <tr data-row="43" class="_43 row_category">
+                                <td id="A-43" class="col_x_collapse A _43">&nbsp;</td>
+                                <td id="B-43" class="col_month B _43">Hardscape</td>
+                                <td id="C-43" class="col_salesDays C _43"></td>
+                                <td id="D-43" class="col_f_revenue D _43">7.21%</td>
+                                <td id="E-43" class="col_diff E _43 miss">-6.84%</td>
+                                <td id="F-43" class="col_revenue F _43">0.37%</td>
+                                <td id="G-43" class="col_6 G _43  miss">0.18%</td>
+                                <td id="H-43" class="col_14 H _43  miss">0.41%</td>
+                                <td id="I-43" class="col_16 I _43  miss">0.02%</td>
+                                <td id="J-43" class="col_33 J _43  miss">0.69%</td>
+                                <td id="K-43" class="col_43 K _43  miss">0.61%</td>
+                                <td id="L-43" class="col_53 L _43  miss">0.70%</td>
+                                <td id="M-43" class="col_116 M _43  miss">0.15%</td>
+                                <td id="N-43" class="col_191 N _43  miss">0.52%</td>
+                            </tr>
+                            <tr data-row="44" class="_44 row_category">
+                                <td id="A-44" class="col_x_collapse A _44">&nbsp;</td>
+                                <td id="B-44" class="col_month B _44">Irrigation</td>
+                                <td id="C-44" class="col_salesDays C _44"></td>
+                                <td id="D-44" class="col_f_revenue D _44">51.26%</td>
+                                <td id="E-44" class="col_diff E _44 hit">0.83%</td>
+                                <td id="F-44" class="col_revenue F _44">52.09%</td>
+                                <td id="G-44" class="col_6 G _44  hit">54.27%</td>
+                                <td id="H-44" class="col_14 H _44  miss">53.50%</td>
+                                <td id="I-44" class="col_16 I _44  hit">42.41%</td>
+                                <td id="J-44" class="col_33 J _44  hit">57.39%</td>
+                                <td id="K-44" class="col_43 K _44  hit">58.06%</td>
+                                <td id="L-44" class="col_53 L _44  miss">58.27%</td>
+                                <td id="M-44" class="col_116 M _44  hit">29.13%</td>
+                                <td id="N-44" class="col_191 N _44  hit">65.01%</td>
+                            </tr>
+                            <tr data-row="45" class="_45 row_category">
+                                <td id="A-45" class="col_x_collapse A _45">&nbsp;</td>
+                                <td id="B-45" class="col_month B _45">Specialty Products</td>
+                                <td id="C-45" class="col_salesDays C _45"></td>
+                                <td id="D-45" class="col_f_revenue D _45">11.62%</td>
+                                <td id="E-45" class="col_diff E _45 miss">-2.58%</td>
+                                <td id="F-45" class="col_revenue F _45">9.04%</td>
+                                <td id="G-45" class="col_6 G _45  miss">12.49%</td>
+                                <td id="H-45" class="col_14 H _45  hit">10.50%</td>
+                                <td id="I-45" class="col_16 I _45  hit">6.07%</td>
+                                <td id="J-45" class="col_33 J _45  miss">11.56%</td>
+                                <td id="K-45" class="col_43 K _45  hit">9.48%</td>
+                                <td id="L-45" class="col_53 L _45  miss">5.17%</td>
+                                <td id="M-45" class="col_116 M _45  hit">4.41%</td>
+                                <td id="N-45" class="col_191 N _45  miss">6.06%</td>
+                            </tr>
+                            <tr data-row="46" class="_46 row_category">
+                                <td id="A-46" class="col_x_collapse A _46">&nbsp;</td>
+                                <td id="B-46" class="col_month B _46">Supplies and Services</td>
+                                <td id="C-46" class="col_salesDays C _46"></td>
+                                <td id="D-46" class="col_f_revenue D _46">0.31%</td>
+                                <td id="E-46" class="col_diff E _46 miss">-0.15%</td>
+                                <td id="F-46" class="col_revenue F _46">0.16%</td>
+                                <td id="G-46" class="col_6 G _46  miss">0.15%</td>
+                                <td id="H-46" class="col_14 H _46  hit">0.24%</td>
+                                <td id="I-46" class="col_16 I _46  miss">0.15%</td>
+                                <td id="J-46" class="col_33 J _46  miss">0.25%</td>
+                                <td id="K-46" class="col_43 K _46  miss">0.12%</td>
+                                <td id="L-46" class="col_53 L _46  miss">0.28%</td>
+                                <td id="M-46" class="col_116 M _46  miss">0.06%</td>
+                                <td id="N-46" class="col_191 N _46  miss">0.10%</td>
+                            </tr>
+                            <tr data-row="47" class="_47 row_category">
+                                <td id="A-47" class="col_x_collapse A _47">&nbsp;</td>
+                                <td id="B-47" class="col_month B _47">Sports Turf</td>
+                                <td id="C-47" class="col_salesDays C _47"></td>
+                                <td id="D-47" class="col_f_revenue D _47">1.50%</td>
+                                <td id="E-47" class="col_diff E _47 hit">0.20%</td>
+                                <td id="F-47" class="col_revenue F _47">1.70%</td>
+                                <td id="G-47" class="col_6 G _47  hit">0.73%</td>
+                                <td id="H-47" class="col_14 H _47  hit">2.35%</td>
+                                <td id="I-47" class="col_16 I _47  miss">2.65%</td>
+                                <td id="J-47" class="col_33 J _47  hit">2.27%</td>
+                                <td id="K-47" class="col_43 K _47  hit">1.48%</td>
+                                <td id="L-47" class="col_53 L _47  miss">2.00%</td>
+                                <td id="M-47" class="col_116 M _47  hit">1.35%</td>
+                                <td id="N-47" class="col_191 N _47  miss">2.19%</td>
+                            </tr>
+                            <tr data-row="48" class="_48 row_category">
+                                <td id="A-48" class="col_x_collapse A _48">&nbsp;</td>
+                                <td id="B-48" class="col_month B _48">Turf Products</td>
+                                <td id="C-48" class="col_salesDays C _48"></td>
+                                <td id="D-48" class="col_f_revenue D _48">14.01%</td>
+                                <td id="E-48" class="col_diff E _48 hit">12.39%</td>
+                                <td id="F-48" class="col_revenue F _48">26.40%</td>
+                                <td id="G-48" class="col_6 G _48  hit">22.14%</td>
+                                <td id="H-48" class="col_14 H _48  miss">18.85%</td>
+                                <td id="I-48" class="col_16 I _48  miss">42.15%</td>
+                                <td id="J-48" class="col_33 J _48  hit">17.57%</td>
+                                <td id="K-48" class="col_43 K _48  hit">18.24%</td>
+                                <td id="L-48" class="col_53 L _48  hit">24.10%</td>
+                                <td id="M-48" class="col_116 M _48  miss">61.17%</td>
+                                <td id="N-48" class="col_191 N _48  miss">13.63%</td>
+                            </tr>
+                            <tr data-row="49" class="_49 row_category">
+                                <td id="A-49" class="col_x_collapse A _49">&nbsp;</td>
+                                <td id="B-49" class="col_month B _49">Water Efficiency</td>
+                                <td id="C-49" class="col_salesDays C _49"></td>
+                                <td id="D-49" class="col_f_revenue D _49">12.45%</td>
+                                <td id="E-49" class="col_diff E _49 miss">-2.64%</td>
+                                <td id="F-49" class="col_revenue F _49">9.81%</td>
+                                <td id="G-49" class="col_6 G _49  miss">9.49%</td>
+                                <td id="H-49" class="col_14 H _49  hit">13.70%</td>
+                                <td id="I-49" class="col_16 I _49  miss">6.48%</td>
+                                <td id="J-49" class="col_33 J _49  miss">10.02%</td>
+                                <td id="K-49" class="col_43 K _49  miss">11.79%</td>
+                                <td id="L-49" class="col_53 L _49  hit">8.85%</td>
+                                <td id="M-49" class="col_116 M _49  miss">3.71%</td>
+                                <td id="N-49" class="col_191 N _49  miss">11.14%</td>
+                            </tr>
+                            <tr data-row="50" class="_50 row_total row_cat_total">
+                                <td id="A-50" class="col_x_collapse A _50">&nbsp;</td>
+                                <td id="B-50" class="col_month B _50">Total</td>
+                                <td id="C-50" class="col_salesDays C _50"></td>
+                                <td id="D-50" class="col_f_revenue D _50">$16,000,000</td>
+                                <td id="E-50" class="col_diff E _50">$-325,000</td>
+                                <td id="F-50" class="col_revenue F _50">$15,675,000</td>
+                                <td id="G-50" class="col_6 G _50 ">$3,670,000</td>
+                                <td id="H-50" class="col_14 H _50 ">$2,801,000</td>
+                                <td id="I-50" class="col_16 I _50 ">$1,451,000</td>
+                                <td id="J-50" class="col_33 J _50 ">$1,038,000</td>
+                                <td id="K-50" class="col_43 K _50 ">$2,594,000</td>
+                                <td id="L-50" class="col_53 L _50 ">$946,000</td>
+                                <td id="M-50" class="col_116 M _50 ">$1,830,000</td>
+                                <td id="N-50" class="col_191 N _50 ">$1,344,000</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="col-lg-1">
+                </div>
+
+            </div>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+
+
+    <div id="slideout" class="hide slideoutShort">
+        <i class="fa fa-angle-double-left fa-2x" id="toggle_icon" title="Open Display Options"></i>
+        <div>
+            <label>Data Display Options</label>
+            <table>
+                <tr>
+                    <th>Section</th>
+                    <th>Dollar ($)</th>
+                    <th>Percent (%)</th>
+                </tr>
+                <tr>
+                    <td><b>Months</b></td>
+                    <td><input type="radio" name="months" class="months D" value="D" checked></td>
+                    <td><input type="radio" name="months" class="months P" value="P"></td>
+                </tr>
+                <tr>
+                    <td><b>Expenses</b></td>
+                    <td><input type="radio" name="expenses" class="expenses D" value="D"></td>
+                    <td><input type="radio" name="expenses" class="expenses P" value="P" checked></td>
+                </tr>
+                <tr>
+                    <td><b>Categories</b></td>
+                    <td><input type="radio" name="categories" class="categories D" value="D"></td>
+                    <td><input type="radio" name="categories" class="categories P" value="P" checked></td>
+                </tr>
+            </table>
+            <button type="button" class="btn btn-default edit reset" id="reset_display">
+                <span class="fa fa-undo"></span>
+                Reset To Defaults
+            </button>
+            <br/>
+            <br/>
+            <label>All Sections</label><br/>
+            <button type="button" class="btn btn-info" id="expandSections"><span class="fa fa-plus"></span> Expand
+            </button>
+            <button type="button" class="btn btn-info" id="collaspseSections"><span class="fa fa-minus"></span> Collapse
+            </button>
+
+            <br><br>
+            <label>View File Sources</label>
+            <ul>
+                <li><a href="#" onclick='newPopup("scripts/projections.js")'>projections.js</a></li>
+                <li><a href="#" onclick='newPopup("scripts/griddata.js")'>griddate.js</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+
+</div>
+<!-- /#page-wrapper -->
+</div>
+<!-- /#wrapper -->
+
+
+</div>
+
+<!-- Bootstrap Core JavaScript -->
+
+</body>
+
+</html>

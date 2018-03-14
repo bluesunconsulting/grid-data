@@ -1,0 +1,451 @@
+/* Customize phpGrid for bootstrap */
+#grid .ui-jqgrid .ui-jqgrid-bdiv {
+    overflow: hidden;
+}
+div.ui-jqgrid.ui-widget.ui-widget-content.ui-corner-all{
+    width: 100% !important;
+    overflow: auto;
+}
+.ui-jqgrid .ui-jqgrid-htable th div {
+    position: inherit;
+    height: initial;
+}
+.ui-jqgrid .ui-jqgrid-view input, .ui-jqgrid .ui-jqgrid-view select, .ui-jqgrid .ui-jqgrid-view textarea, .ui-jqgrid .ui-jqgrid-view button {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+}
+.ui-jqgrid .ui-jqgrid-caption.ui-jqgrid-titlebar {
+    background-color: #f5f5f5;
+    border-color: #ddd;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    color: #333;
+    padding: 10px 15px;
+}
+
+/* Customize bootstrap */
+#ewing .col-centered{
+    float: none;
+    margin: 0 auto;
+}
+.page-header {
+    margin-top: 0;
+    padding-top: 10px;
+}
+#page-wrapper {
+    border: none;
+    padding: 0 30px;
+    margin: 0;
+}
+.alert {
+    text-align: center;
+}
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 20px;
+    background-color: #f5f5f5;
+}
+.footer a {
+    color: #0093d0;
+    font-weight: bold;
+}
+.center {
+    text-align: center;
+}
+.login-panel {
+    margin-top: 25%;
+}
+
+/* Customize Font Awesome for naviagation */
+.fa-projections:before {
+    content: "\f0ce";
+}
+.fa-priorities:before {
+    content: "\f15c";
+}
+.fa-admin:before {
+    content: "\f013";
+}
+table .fa {
+    display: table-cell;
+}
+
+/* Page Customizations */
+.navbar-right form {
+    display: inline-block;
+}
+.navbar-right select {
+    margin-right: 1em;
+}
+#replay {
+    background-color: #888;
+    color: #fff;
+    margin: 3px 0;
+    padding: 3px 72px;
+}
+#replay:hover {
+    background-color: #aaa;
+}
+body .joyride-tip-guide {
+    width: 450px;
+}
+#spinner {
+    background: url('../_images/cover.png');
+    background-size: cover;
+    color: #fff;
+    height: 999px;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+#spinner div {
+    margin: 15% 40%;
+    text-align: center;
+}
+.before-table {
+    margin-bottom: 1em;
+}
+#ewing .submit,
+#ewing .btn-primary {
+    background-color: #0093d0;
+    border-color: #adadad;
+    color: #fff;
+}
+#ewing .submit:hover,
+#ewing .btn-primary:hover {
+    background-color: #00a6ee;
+    border-color: #adadad;
+    color: #fff;
+}
+#ewing .delete {
+    background-color: #d07c7c;
+    color: #fff;
+}
+#ewing .delete:hover {
+    background-color: #bb7373;
+}
+.text-right {
+    text-align: right !important;
+}
+.issue-text {
+    min-height: 100px;
+}
+
+.browser-update ul {
+    list-style-type: none;
+    padding: 0;
+}
+.browser-update li {
+    border-top: 1px solid #ccc;
+    clear: both;
+    font-weight: bold;
+    padding: 2em 0;
+}
+.browser-update .no-border {
+    border: none;
+}
+.browser-update img {
+    float: right;
+    margin: 2em 0;
+}
+
+
+
+/* Customize budget grid */
+#grid {
+    /*height: 970px;*/
+    /*height: 1210px;*/
+}
+.select-input {
+    margin-bottom: 2em;
+}
+.percent:after,
+.percent .ui-jqgrid-cell-wrapper:after,
+.percentage:after {
+    /*content: '%';*/
+}
+
+.percentage {
+    text-align : right;
+    padding-right: 0.3em;
+}
+
+#ewing .ui-jqgrid .ui-jqgrid-bdiv tr.ui-row-ltr > td {
+    padding: 1px 2px;
+}
+#levelSelect label {
+    margin-right: 1em;
+}
+#textOutput {
+    margin-top: 1em;
+}
+#growthSlider .percent-after-input {
+    margin-top: 1em;
+    padding: 3px;
+}
+.inline_title {
+    font-weight: bold;
+    text-align: center;
+}
+
+
+/* Customize goals form */
+.my-goals .form-group textarea {
+    resize: vertical;
+}
+.my-goals .nav-tabs > li > a {
+    display:inline-block;
+}
+.my-goals .nav-tabs > li > span,
+.my-goals .edit .add_existing_milestone,
+.add_work_with,
+.remove_existing_work_with,
+.my-goals .edit .remove_existing_milestone {
+    color: red;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.my-goals .nav-tabs > li > span {
+    display: none;
+    position: absolute;
+    right: 10px;
+    top: 8px;
+}
+.my-goals .nav-tabs li:nth-last-child(2):hover > a {
+    padding-right: 25px;
+}
+.my-goals .nav-tabs li:nth-last-child(2):hover > span {
+    display: inline-block;
+}
+.my-goals .nav-tabs li:nth-child(1):hover > a {
+    padding-right: 15px;
+}
+.my-goals .panel-heading,
+.browser-update .panel-heading,
+.my-goals .nav-tabs > li > a {
+    border: 1px solid #327E04;
+    background: #459e00; /* url("../_images/south-street/ui-bg_highlight-hard_15_459e00_1x100.png") 50% 50% repeat-x;*/
+    color: #fff;
+}
+.my-goals .nav-tabs {
+    border-bottom: 3px solid #327E04;
+}
+.my-goals .tab-content {
+    padding: 15px;
+}
+.my-goals .nav-tabs > li:hover > a,
+.my-goals .nav-tabs > li:active > a,
+.my-goals .nav-tabs > li > a:focus{
+    border: 1px solid #327E04;
+    color: #fff;
+    font-weight: bold;
+}
+.my-goals .panel-heading a,
+.browser-update .panel-heading a,
+.my-goals .panel-heading:hover {
+    color: #fff;
+    font-size: 24px;
+    font-weight: normal;
+    text-decoration: none;
+}
+.my-goals .panel-heading a:hover {
+    font-weight: bold;
+}
+.my-goals .form-group label {
+    width: 100%;
+}
+.my-goals label * {
+    font-weight: normal;
+}
+.my-goals .milestone-inputs label {
+    width: 100%;
+}
+.my-goals .edit .dropdown {
+    max-width: 100px;
+}
+
+.my-goals .other select,
+.my-goals .other input {
+    width: 48%;
+    display:inline-block !important;
+}
+
+.dropdown-menu li {
+    width: 100%;
+}
+
+/*Reset navbar on small screens*/
+.navbar-top-links li {
+    display: block;
+}
+@media (min-width: 768px) {
+    .navbar-top-links li {
+        display: inline-block;
+    }
+}
+
+
+/*Add XL size to bootstrap */
+@media (min-width: 1500px) {
+    .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12 {
+        float: left;
+    }
+
+    .col-xl-12 {
+        width: 100%;
+    }
+    .col-xl-11 {
+        width: 91.66666667%;
+    }
+    .col-xl-10 {
+        width: 83.33333333%;
+    }
+    .col-xl-9 {
+        width: 75%;
+    }
+    .col-xl-8 {
+        width: 66.66666667%;
+    }
+    .col-xl-7 {
+        width: 58.33333333%;
+    }
+    .col-xl-6 {
+        width: 50%;
+    }
+    .col-xl-5 {
+        width: 41.66666667%;
+    }
+    .col-xl-4 {
+        width: 33.33333333%;
+    }
+    .col-xl-3 {
+        width: 25%;
+    }
+    .col-xl-2 {
+        width: 16.66666667%;
+    }
+    .col-xl-1 {
+        width: 8.33333333%;
+    }
+}
+
+td.workWithAmt{
+    text-align: right;
+}
+
+span.total
+{
+    text-align: right;
+    font-weight: bolder;
+    color: #227100;
+}
+
+span.total.warning
+{
+    color: #f00;
+    font-size: larger;
+}
+
+.notesTable{
+    margin-left:    1px;
+    margin-right:   1px;
+
+}
+.notesTable > div > table {
+    table-layout: auto;
+}
+
+.notesTable .col_Entity {
+    width: 150px;
+    text-align: left;
+}
+
+.notesTable .col_Date {
+    width: 100px;
+    text-align: center;
+}
+
+.notesTable .col_Note {
+    text-align: left;
+    padding-left: 3px;
+}
+
+#notes_message
+{
+    color: #ff0000;
+    font-weight: bolder;
+}
+
+
+/*slideout panel*/
+.container {
+    margin-top: 20px;
+}
+
+#slideout {
+    background: #fff;
+    box-shadow: 0 0 5px rgba(0,0,0,.3);
+    color: #333;
+    position: fixed;
+    top: 100px;
+    right: -280px;
+    width: 300px;
+    height: 500px;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+
+#slideout.slideoutShort
+{
+    height: calc(380px - 80px);
+}
+
+#slideout.slideoutmini
+{
+    height: calc(380px - 230px);
+}
+
+#slideout div {
+    display: block;
+    padding: 20px;
+}
+
+#slideout.on {
+    right: 0;
+}
+
+#slideout th
+{
+    background-color: rgb(69, 158, 0);
+    color: rgb(255,255,255);
+    font-weight: bolder;
+    text-align: center;
+}
+
+#slideout td{
+    text-align: center;
+}
+
+#slideout table
+{
+    margin-bottom: 10px;
+}
+
+#logged-out {
+    background: #f00;
+    color: #fff;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.popover ul {
+    padding-left: 15px;
+}

@@ -1,0 +1,204 @@
+tr:nth-child(1n).gold,
+tr:nth-child(1n).gold td {
+    background-color: #ffeb3b;
+}
+
+/*
+tr.blue {
+    background-color: #bbeeff;
+}
+*/
+
+td input{
+    width: 100%;
+}
+
+/* Buttons Styling */
+#footer #wrapper {
+    height: 84px;
+}
+
+/* Tutorial */
+.popover.orphan {
+    max-width: inherit;
+    width: 500px;
+}
+
+/*Row Styling*/
+tr {
+    background-color: #f5f3e5; /* url(/budget/_images/south-street/ui-bg_highlight-hard_100_f5f3e5_1x100.png) 50% top repeat-x; */
+    color: #312e25;
+}
+tr:nth-child(2n) {
+    background-color: #F5FAFF;
+}
+.grid .header {
+    background: rgb(69, 158, 0);
+    border-top: 0px none;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    height: 22px;
+    padding: 0 2px;
+    text-align: center;
+}
+.grid tr:hover:nth-child(1n) td {
+    background: #f2fc9c;
+}
+
+/* used to fix hover problem with header rows that are not really TRs */
+.grid tr:hover:nth-child(1n).header td {
+    background: rgb(69, 158, 0);
+}
+/*Cell Styling*/
+th {
+    border: 1px solid #327E04;
+}
+td {
+    border: 1px solid #dfd9c3;
+    height: 22px;
+    padding: 1px 2px;
+}
+
+/*customize editable cells*/
+.editable-container div {
+    display: inline-block;
+    width: 100%;
+}
+tr .editable {
+    background: rgba(0,255, 255, .10);
+}
+
+/*Customizations*/
+tbody {
+    text-align: right;
+}
+td.month {
+    text-align: left;
+}
+th.month,
+td.month {
+    width: 140px
+}
+.col_salesDays , .salesDays {
+    text-align: center;
+    width: 60px;
+}
+
+.col_x-collapse, .x-collapse {
+    text-align: center;
+    width: 18px;
+}
+
+.p4p .diff,
+.p4p:nth-child(2n) .diff,
+.blank .diff,
+.blank:nth-child(2n) .diff {
+    background-color: initial;
+}
+.p4p .ros {
+    background-color: #fe8;
+}
+.p4p:nth-child(2n) .ros {
+    background-color: #ffb;
+}
+.p4p .sales {
+    background-color: #aff;
+}
+.p4p:nth-child(2n) .sales {
+    background-color: #dff;
+}
+tr .diff {
+    background-color: #deb;
+}
+tr:nth-child(2n) .diff {
+    background-color: #efd;
+}
+
+/* editable customizations */
+.editable-input input {
+    width: 100%;
+}
+.editable-error-block {
+    background: #f00;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+}
+
+.grid .hit,
+.grid .miss,
+.row_title td {
+    font-weight: bold;
+}
+.row_title td {
+    color: #fff;
+    text-align: center;
+}
+.grid .hit, span.hit {
+    color: #00f;
+}
+.grid .miss, span.miss {
+    color: #f00;
+}
+
+.grid .blue:nth-child(1n),
+.grid .blue td,
+.grid .blue:hover td,
+.grid tr:hover .blue {
+    background-color: #bef !important;
+}
+
+
+.grid .yellow:nth-child(1n),
+.grid .yellow td,
+.grid .yellow:hover td,
+.grid tr:hover .yellow {
+    background-color: #ffeb3b !important;
+}
+
+.difference,
+.c_total,
+.col_c_total,
+.col_difference {
+    display:none;
+}
+
+.grid .row_blank td {
+    border-color: #FFF;
+    background-color: #FFF ;
+}
+
+.grid .row_blank:hover td {
+    background-color: #FFF !important;
+}
+
+/*  This is to make the text word wrap correctly. */
+#treeNotes a {
+    white-space: normal !important;
+    height: auto;
+    padding: 1px 2em 1px 1px;
+}
+
+#treeNotes i {
+    color: #459E00;
+}
+#treeNotes ul
+{
+    font-weight: 500;
+}
+/*
+.grid .green:nth-child(1n),
+.grid .green td,
+.grid .green:hover td,
+.grid tr:hover .green {
+    background: url('../_images/south-street/ui-bg_highlight-hard_15_459e00_1x100.png') 50% 50% repeat-x rgb(69, 158, 0) !important;
+}
+*/
+
+
+tr .calculated {
+    background-color: #ddf;
+}
+tr:nth-child(2n) .calculated {
+    background-color: #eef;
+}
